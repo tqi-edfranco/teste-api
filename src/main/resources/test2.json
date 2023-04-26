@@ -1,0 +1,43 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "account": {
+              "query": "MPA-5B0752250450",
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "match": {
+            "type": {
+              "query": "8",
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "match": {
+            "status": {
+              "query": "SETTLED",
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "range": {
+            "settledAt": {
+              "from": "2023-01-25 00:00:00",
+              "to": "2023-01-25 23:59:59",
+              "include_lower": true,
+              "include_upper": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

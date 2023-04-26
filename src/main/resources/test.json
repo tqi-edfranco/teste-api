@@ -1,0 +1,35 @@
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "account": {
+              "query": "MPA-07FF559D151C",
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "match": {
+            "status": {
+              "query": "SETTLED",
+              "type": "boolean"
+            }
+          }
+        },
+        {
+          "range": {
+            "settledAt": {
+              "from": "2023-02-01 00:00:00",
+              "to": "2023-02-16 23:59:59",
+              "include_lower": true,
+              "include_upper": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}
